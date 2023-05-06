@@ -16,7 +16,8 @@ async function start() {
 
     core.info(`context event: ${github.context.eventName}`);
     core.info(`context action: ${github.context.action}`);
-    core.info(`payload action: ${github.context.payload.action}`);
+    core.info(`payload action: ${github.context.payload}`);
+    core.info('testing1234');
     const options = {
       notion: {
         token: notionToken,
@@ -28,7 +29,7 @@ async function start() {
         token: githubToken,
       },
     };
-    core.info('testing1234');
+
     core.info(JSON.stringify(options));
     await run(options);
   } catch (e) {
